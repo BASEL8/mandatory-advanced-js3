@@ -164,7 +164,7 @@ class Home extends Component {
             variant="outlined"
             color="primary"
             className={this.props.classes.button}
-            onClick={() => this.handleSubmit}
+            onClick={this.handleSubmit}
           >
             Add
           </Button>

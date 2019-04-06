@@ -44,9 +44,16 @@ class Login extends Component {
   };
   onSubmit = (e) => {
     e.preventDefault();
+    this.source = axios.CancelToken.source();
     const { email, password } = this.state.info;
     axios
-      .post(API_ROOT + "/auth", { email, password })
+      .post(
+        API_ROOT + "/auth",
+        { email, password },
+        {
+          cancelToken: this.source.token
+        }
+      )
       .then((response) => {
         if (response.data.status) {
           updateToken(response.data.token);
@@ -60,6 +67,11 @@ class Login extends Component {
       const { email, password } = this.props.history.location.state;
       const info = { email: email, password: password };
       this.setState({ info });
+    }
+  }
+  componentWillUnmount() {
+    if (this.source) {
+      this.source.cancel();
     }
   }
   render() {

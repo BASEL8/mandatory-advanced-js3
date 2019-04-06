@@ -48,7 +48,6 @@ class Register extends Component {
     axios
       .post(API_ROOT + "/register", { email: email, password: password })
       .then((response) => {
-        console.log(response);
         if (response.data.status === "success") {
           this.props.history.push({
             pathname: "/login",
