@@ -65,9 +65,6 @@ class Nav extends Component {
               ) : null}
               {this.state.token ? (
                 <div>
-                  <Button color="inherit">
-                    <Link to="/home">Home</Link>{" "}
-                  </Button>
                   <Button color="inherit" onClick={() => updateToken(null)}>
                     Logout
                   </Button>
