@@ -145,7 +145,11 @@ class Home extends Component {
             <p>Loading profile...</p>
           )}
         </div>
-        <form onSubmit={this.handleSubmit} className={this.props.classes.form}>
+        <form
+          onSubmit={this.handleSubmit}
+          className={this.props.classes.form}
+          data-testid="addToDo"
+        >
           <TextField
             id="outlined-full-width"
             label="Add Todo"
@@ -164,7 +168,7 @@ class Home extends Component {
             variant="outlined"
             color="primary"
             className={this.props.classes.button}
-            onClick={this.handleSubmit}
+            type="submit"
           >
             Add
           </Button>

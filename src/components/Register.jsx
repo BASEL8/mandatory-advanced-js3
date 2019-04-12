@@ -98,7 +98,7 @@ class Register extends Component {
           <p style={{ color: "red" }}>please try agin</p>
         ) : null}
         <Button
-          onClick={this.onSubmit}
+          type="submit"
           variant="contained"
           color="primary"
           className={classes.button}
